@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,17 @@
     <title>PetFax | Submitted Facts</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <div class="container">
         <H1>UserFax</H1>
+        {% for fact in facts %}
+        <H4 style="color: chocolate;">
+            Submitted by {{ fact.submitter }}
+        </H4>
+        {{ fact.fact }}
+        {% endfor %}
     </div>
 </body>
+
 </html>
